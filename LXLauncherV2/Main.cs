@@ -22,7 +22,10 @@ namespace LXLauncher
             FormBorderStyle = FormBorderStyle.None;
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
+        string discordserver;
+        string MenuBanner1;
+        string MenuIconFont;
+        string MenuTitleFont;
         private void Main_Load(object sender, EventArgs e)
         {
             Dictionary<string, string> Data = functions.GetData();
@@ -31,6 +34,11 @@ namespace LXLauncher
             label14.Text = Data["MenuVersion"];
             label16.Text = Data["Discord"];
             label15.Text = Data["GameVersion"];
+            discordserver = Data["DiscordServer"];
+            MenuBanner1 = Data["MenuBanner"];
+            MenuIconFont = Data["IconFont"];
+            MenuTitleFont = Data["TitleFont"];
+
             label5.Text = "V" + Data["MenuVersion"];
 
             WebClient webc = new WebClient();
@@ -132,10 +140,11 @@ namespace LXLauncher
 
             try
             {
+                //connected to the pastebin
                 WebClient wc = new WebClient();
-                wc.DownloadFile("https://media.discordapp.net/attachments/1030987495380369519/1063195054350532728/Best.gif", HeaderPath + "/Best.gif"); // Temp Fix here. Replace link with new one
-                wc.DownloadFile("https://cdn.discordapp.com/attachments/1030987495380369519/1063194971252981930/IconFont.ttf", FontPath + "/IconFont.ttf"); // Temp Fix here. Replace link with new one
-                wc.DownloadFile("https://cdn.discordapp.com/attachments/1030987495380369519/1063190266909044826/TitleFont.ttf", FontPath + "/TitleFont.ttf"); // Temp Fix here. Replace link with new one
+                wc.DownloadFile(MenuBanner1, HeaderPath + "/Best.gif");
+                wc.DownloadFile(MenuIconFont, FontPath + "/IconFont.ttf"); 
+                wc.DownloadFile(MenuTitleFont, FontPath + "/TitleFont.ttf");
             }
             catch (Exception ex)
             {
@@ -159,11 +168,11 @@ namespace LXLauncher
         {
             try
             {
-                Process.Start("https://discord.gg/KC5he7Qe6e");
+                Process.Start(discordserver);
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Failed to open link\nLink: https://discord.gg/KC5he7Qe6e\nError: " + ex.Message, "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Failed to open link\nLink: " + discordserver + "\nError: " + ex.Message, "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -175,8 +184,7 @@ namespace LXLauncher
             Dictionary<string, string> Data = functions.GetData();
 
             bool b1 = Data.TryGetValue("Status", out string MenuOnline);
-            bool b2 = true; //Data.TryGetValue("dll", out string DllLink);
-            string DllLink = "https://cdn.discordapp.com/attachments/1030987495380369519/1063187941108764794/LX.dll"; // Temp fix here. Remove this line and uncomment the line above. Fix pastebin links
+            bool b2 = true; Data.TryGetValue("dll", out string DllLink);
 
             if (!b1 || !b2)
                 MessageBox.Show("An error occured, please try again", "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);

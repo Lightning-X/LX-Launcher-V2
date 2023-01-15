@@ -9,3 +9,14 @@ D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Relea
 D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.csproj.CoreCompileInputs.cache
 D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.exe
 D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.pdb
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.csproj.AssemblyReference.cache
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.csproj.SuggestedBindingRedirects.cache
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.pdb
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\bin\Release\LXLauncherV2.exe.config
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\bin\Release\LXLauncherV2.exe
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\bin\Release\LXLauncherV2.pdb
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncher.Main.resources
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncher.Properties.Resources.resources
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.csproj.GenerateResource.cache
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.csproj.CoreCompileInputs.cache
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Release\LXLauncherV2.exe

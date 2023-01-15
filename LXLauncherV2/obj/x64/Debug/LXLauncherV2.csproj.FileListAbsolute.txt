@@ -1,0 +1,2 @@
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.AssemblyReference.cache
+C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.SuggestedBindingRedirects.cache

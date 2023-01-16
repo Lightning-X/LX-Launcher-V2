@@ -300,37 +300,6 @@ namespace LXLauncher
             CloseHandle(intPtr);
         }
 
-        public static void DeleteDirectory(string path, bool recursive)
-        {
-            if (recursive)
-            {
-                var subfolders = Directory.GetDirectories(path);
-                foreach (var s in subfolders)
-                {
-                    DeleteDirectory(s, recursive);
-                }
-            }
-            var files = Directory.GetFiles(path);
-            foreach (var f in files)
-            {
-                try
-                {
-                    var attr = File.GetAttributes(f);
-                    if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
-                    {
-                        File.SetAttributes(f, attr ^ FileAttributes.ReadOnly);
-                    }
-                    File.Delete(f);
-                }
-                catch (IOException ex)
-                {
-                    throw ex;
-                }
-            }
-            Directory.Delete(path);
-        }
-
-        // 
         private async void button3_Click(object sender, EventArgs e)
         {
             string Path = @"C:\LightningFiles";
@@ -338,7 +307,7 @@ namespace LXLauncher
             {
                 try
                 {
-                    DeleteDirectory(Path, true);
+                    functions.DeleteDirectory(Path, true);
 
                     button3.BackColor = Color.FromArgb(76, 146, 186);
                     button3.ForeColor = Color.FromArgb(255, 255, 255);

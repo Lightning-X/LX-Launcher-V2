@@ -11,16 +11,19 @@ namespace LXLauncher
 {
     internal class Functions
     {
+        private readonly WebClient WebClient = new WebClient
+        {
+            CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore)
+        };
+
         public Dictionary<string, string> GetData()
         {
             Dictionary<string, string> Data = new Dictionary<string, string>();
 
             try
             {
-                WebClient wc = new WebClient();
-                wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
                 string[] seperator = { ": ", "\n" };
-                string[] TempData = wc.DownloadString("https://pastebin.com/raw/sYUdeNqv").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+                string[] TempData = WebClient.DownloadString("https://pastebin.com/raw/sYUdeNqv").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
 
 
                 for (int i = 0; i < TempData.Length; i += 2)
@@ -115,10 +118,8 @@ namespace LXLauncher
         //    {
         //        bool banned = false;
 
-        //        WebClient wc = new WebClient();
-        //        wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
         //        string[] seperator = { "\n" };
-        //        string[] List = wc.DownloadString("https://pastebin.com/raw/ZkhR8n0A").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
+        //        string[] List = WebClient.DownloadString("https://pastebin.com/raw/ZkhR8n0A").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
         //        string HWID = System.Security.Principal.WindowsIdentity.GetCurrent().User.Value;
         //        string Hashed = Hash(HWID);
 

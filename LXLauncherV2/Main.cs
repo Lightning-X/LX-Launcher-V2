@@ -14,7 +14,11 @@ namespace LXLauncher
     public partial class Main : Form
     {
         int mov, movX, movY;
-        readonly Functions functions = new Functions();
+        private readonly Functions functions = new Functions();
+        private readonly WebClient WebClient = new WebClient
+        {
+            CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore)
+        };
 
         public Main()
         {
@@ -26,7 +30,7 @@ namespace LXLauncher
         string MenuBanner1;
         string MenuIconFont;
         string MenuTitleFont;
-        private void Main_Load(object sender, EventArgs e)
+        private async void Main_Load(object sender, EventArgs e)
         {
             Dictionary<string, string> Data = functions.GetData();
 
@@ -41,21 +45,22 @@ namespace LXLauncher
 
             label5.Text = "V" + Data["MenuVersion"];
 
-            WebClient webc = new WebClient();
-            string changelog = webc.DownloadString("https://pastebin.com/raw/yLKKhF2s");
-            richTextBox1.Text = changelog;
+            richTextBox1.Text = WebClient.DownloadString("https://pastebin.com/raw/yLKKhF2s"); ;
 
             switch (label10.Text)
             {
-                case "ONLINE": 
+                case "ONLINE":
                     label10.ForeColor = Color.Lime; break;
 
-                case "UPDATING": 
+                case "UPDATING":
                     label10.ForeColor = Color.Yellow; break;
 
-                default: 
+                default:
                     label10.ForeColor = Color.Red; break;
             }
+
+            AnimateWindow(Handle, 500, AnimateWindowFlags.AW_BLEND | AnimateWindowFlags.AW_HIDE);
+            await Task.Delay(2000);
 
             AnimateWindow(Handle, 500, AnimateWindowFlags.AW_BLEND);
             timer1.Start();
@@ -84,7 +89,7 @@ namespace LXLauncher
         private void Main_MouseMove(object sender, MouseEventArgs e)
         {
             if (mov == 1) SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
-            
+
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -141,10 +146,9 @@ namespace LXLauncher
             try
             {
                 //connected to the pastebin
-                WebClient wc = new WebClient();
-                wc.DownloadFile(MenuBanner1, HeaderPath + "/Best.gif");
-                wc.DownloadFile(MenuIconFont, FontPath + "/IconFont.ttf"); 
-                wc.DownloadFile(MenuTitleFont, FontPath + "/TitleFont.ttf");
+                WebClient.DownloadFile(MenuBanner1, HeaderPath + "/Best.gif");
+                WebClient.DownloadFile(MenuIconFont, FontPath + "/IconFont.ttf");
+                WebClient.DownloadFile(MenuTitleFont, FontPath + "/TitleFont.ttf");
             }
             catch (Exception ex)
             {
@@ -179,8 +183,6 @@ namespace LXLauncher
         // Download DLL
         async Task<bool> DownloadDLL(string Path)
         {
-            WebClient wc = new WebClient();
-            wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
             Dictionary<string, string> Data = functions.GetData();
 
             bool b1 = Data.TryGetValue("Status", out string MenuOnline);
@@ -205,9 +207,9 @@ namespace LXLauncher
 
             try
             {
-                await wc.DownloadFileTaskAsync(new Uri(DllLink), Path);
+                await WebClient.DownloadFileTaskAsync(new Uri(DllLink), Path);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Failed to download dll\nError: " + ex.Message, "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -281,9 +283,9 @@ namespace LXLauncher
 
                     await Task.Delay(5000);
 
-                    button3.BackColor = Color.FromArgb(255, 255, 255); //darkercolor
-                    button3.ForeColor = Color.FromArgb(0, 0, 0);
-                    button3.Text = "Inject";
+                    button4.BackColor = Color.FromArgb(255, 255, 255); //darkercolor
+                    button4.ForeColor = Color.FromArgb(0, 0, 0);
+                    button4.Text = "Inject";
                 }
             }
             catch (IOException ex)

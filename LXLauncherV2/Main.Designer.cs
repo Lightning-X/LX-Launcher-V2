@@ -118,7 +118,6 @@ namespace LXLauncher
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -136,7 +135,7 @@ namespace LXLauncher
             this.richTextBox1.BackColor = System.Drawing.Color.Black;
             this.richTextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 44);
+            this.richTextBox1.Location = new System.Drawing.Point(68, 77);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(263, 161);
@@ -147,7 +146,7 @@ namespace LXLauncher
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(9, 10);
+            this.button8.Location = new System.Drawing.Point(382, 185);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(253, 28);
             this.button8.TabIndex = 16;
@@ -521,6 +520,7 @@ namespace LXLauncher
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(768, 483);
             this.Controls.Add(this.panel11);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);

@@ -61,26 +61,26 @@ namespace LXLauncher
             return -1;
         }
 
-        private string Hash(string s, bool l = false)
-        {
-            string r = "";
+        //private string Hash(string s, bool l = false)
+        //{
+        //    string r = "";
 
-            try
-            {
-                byte[] d = Encoding.UTF8.GetBytes(s);
+        //    try
+        //    {
+        //        byte[] d = Encoding.UTF8.GetBytes(s);
 
-                using (SHA512 a = new SHA512Managed())
-                {
-                    byte[] h = a.ComputeHash(d);
-                    r = BitConverter.ToString(h).Replace("-", "");
-                }
+        //        using (SHA512 a = new SHA512Managed())
+        //        {
+        //            byte[] h = a.ComputeHash(d);
+        //            r = BitConverter.ToString(h).Replace("-", "");
+        //        }
 
-                r = (l ? r.ToLowerInvariant() : r);
-            }
-            catch { }
+        //        r = (l ? r.ToLowerInvariant() : r);
+        //    }
+        //    catch { }
 
-            return r;
-        }
+        //    return r;
+        //}
 
         public void DeleteDirectory(string path, bool recursive)
         {

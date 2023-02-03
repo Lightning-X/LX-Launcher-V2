@@ -1,2 +1,13 @@
 C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.AssemblyReference.cache
 C:\Users\anvar\OneDrive\Desktop\LXLauncher2\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.SuggestedBindingRedirects.cache
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\bin\Debug\LXLauncherV2.exe.config
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\bin\Debug\LXLauncherV2.exe
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\bin\Debug\LXLauncherV2.pdb
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.AssemblyReference.cache
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.SuggestedBindingRedirects.cache
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncher.Main.resources
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncher.Properties.Resources.resources
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.GenerateResource.cache
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.csproj.CoreCompileInputs.cache
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.exe
+D:\Users\PlayboyPrime\Documents\GitHub\LX-Launcher-V2\LXLauncherV2\obj\x64\Debug\LXLauncherV2.pdb

@@ -35,12 +35,12 @@ namespace LXLauncher
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -128,17 +128,30 @@ namespace LXLauncher
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button6
+            // richTextBox1
             // 
-            this.button6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(9, 170);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(253, 29);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Discord";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            this.button6.MouseHover += new System.EventHandler(this.button6_MouseHover);
+            this.richTextBox1.BackColor = System.Drawing.Color.Black;
+            this.richTextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.richTextBox1.Location = new System.Drawing.Point(5, 42);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(263, 202);
+            this.richTextBox1.TabIndex = 17;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(9, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(253, 28);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "Main Menu";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button5
             // 
@@ -176,30 +189,17 @@ namespace LXLauncher
             this.button7.Click += new System.EventHandler(this.button7_Click);
             this.button7.MouseHover += new System.EventHandler(this.button7_MouseHover);
             // 
-            // richTextBox1
+            // button6
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.Black;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.richTextBox1.Location = new System.Drawing.Point(6, 42);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(263, 202);
-            this.richTextBox1.TabIndex = 17;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(9, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(253, 28);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "Main Menu";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Visible = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.button6.Location = new System.Drawing.Point(9, 170);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(253, 29);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Discord";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.MouseHover += new System.EventHandler(this.button6_MouseHover);
             // 
             // panel4
             // 

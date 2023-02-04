@@ -41,9 +41,7 @@ namespace LXLauncher
             }
 
             Dictionary<string, string> Data = functions.GetData();
-            // DEBUG
-            //label10.Text = Data["Status"];
-            label10.Text = "ONLINE";
+            label10.Text = Data["Status"];
             label14.Text = Data["MenuVersion"];
             label16.Text = Data["Discord"];
             label15.Text = Data["GameVersion"];
@@ -204,8 +202,6 @@ namespace LXLauncher
             if (!b1 || !b2)
                 MessageBox.Show("An error occured, please try again", "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            // DEBUG
-            MenuOnline = "true";
 
             if (File.Exists(Path)) File.Delete(Path);
 
@@ -279,12 +275,11 @@ namespace LXLauncher
 
             Dictionary<string, string> Data = functions.GetData();
 
-            // DEBUG
-            //if (Data["Status"] != "ONLINE")
-            //{
-            //    MessageBox.Show("The menu is currently offline", "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (Data["Status"] != "ONLINE")
+            {
+                MessageBox.Show("The menu is currently offline", "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             int pid = functions.GetPid();
             IntPtr intPtr = OpenProcess(1082U, false, pid);
@@ -494,11 +489,6 @@ namespace LXLauncher
             int nWidthEllipse, // width of ellipse
             int nHeightEllipse // height of ellipse
         );
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         [DllImport("user32.dll")]
         static extern bool AnimateWindow(IntPtr hWnd, int time, AnimateWindowFlags flags);

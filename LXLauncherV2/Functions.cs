@@ -25,7 +25,6 @@ namespace LXLauncher
                 string[] seperator = { ": ", "\n" };
                 string[] TempData = WebClient.DownloadString("https://pastebin.com/raw/sYUdeNqv").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
 
-
                 for (int i = 0; i < TempData.Length; i += 2)
                 {
                     if (TempData[i].Trim().StartsWith("//") || TempData[i].Trim().StartsWith("#") || string.IsNullOrEmpty(TempData[i].Trim()))
@@ -40,12 +39,11 @@ namespace LXLauncher
 
                     Data.Add(Key, Value);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Failed to receive data\nMake sure you have a internet connection\nError: " + ex.Message, "LXLauncherV2", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
+                Application.Exit();
             }
 
             return Data;
@@ -55,7 +53,10 @@ namespace LXLauncher
         {
             foreach (Process p in Process.GetProcesses())
             {
-                if (p.ProcessName == "GTA5") return p.Id;
+                if (p.ProcessName.Equals("GTA5", StringComparison.OrdinalIgnoreCase))
+                {
+                    return p.Id;
+                }
             }
 
             return -1;
@@ -86,29 +87,26 @@ namespace LXLauncher
         {
             if (recursive)
             {
-                var subfolders = Directory.GetDirectories(path);
-                foreach (var s in subfolders)
+                foreach (var subdirectory in Directory.GetDirectories(path))
                 {
-                    DeleteDirectory(s, recursive);
+                    DeleteDirectory(subdirectory, recursive);
                 }
             }
-            var files = Directory.GetFiles(path);
-            foreach (var f in files)
+
+            foreach (var file in Directory.GetFiles(path))
             {
                 try
                 {
-                    var attr = File.GetAttributes(f);
-                    if ((attr & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
-                    {
-                        File.SetAttributes(f, attr ^ FileAttributes.ReadOnly);
-                    }
-                    File.Delete(f);
+                    File.SetAttributes(file, FileAttributes.Normal);
+                    File.Delete(file);
                 }
                 catch (IOException ex)
                 {
+                    // Handle the exception or rethrow it if needed
                     throw ex;
                 }
             }
+
             Directory.Delete(path);
         }
 
@@ -122,7 +120,6 @@ namespace LXLauncher
         //        string[] List = WebClient.DownloadString("https://pastebin.com/raw/ZkhR8n0A").Split(seperator, StringSplitOptions.RemoveEmptyEntries);
         //        string HWID = System.Security.Principal.WindowsIdentity.GetCurrent().User.Value;
         //        string Hashed = Hash(HWID);
-
 
         //        foreach (string User in List)
         //        {
@@ -160,7 +157,6 @@ namespace LXLauncher
 
         //public void LogInfo()
         //{
-
         //}
     }
 }
